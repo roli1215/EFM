@@ -18,24 +18,23 @@ linreg <- function(X,Y)
 		sumC = sumC + Y[i];
 		sumASquare = sumASquare + X[i]^2;
 	}
-	sumB = -sumB;
 	
-	detAFirst = sumA * length(X) - sumC * sumB;
-	detASecond = sumASquare * length(X) - (-sumB) * sumB;
+	
+	detAFirst = (sumA * length(X)) - (sumC * sumB);
+	detASecond = sumASquare * length(X) - sumB * sumB;
 	a = detAFirst / detASecond;
 
-	detBFirst = sumASquare * sumC - (-sumB) * sumA;
-	detBSecond = sumASquare * length(X) - (-sumB) * sumB;
+	detBFirst = sumASquare * sumC - sumB * sumA;
+	detBSecond = sumASquare * length(X) - sumB * sumB;
 	b = detBFirst / detBSecond;
+
+
 	
 	lines(X, a*X+b, type = "l", lty = 1, col="blue")
-	
-	print(a);
-	print(b);
 	
 }
 
 X = c(1,2,3,4,5);
-Y = c(3.1,5.1,6.9,9.1,10.1);
+Y = c(3,5,7,9,11);
 
 linreg(X,Y);
