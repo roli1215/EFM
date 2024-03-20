@@ -10,8 +10,17 @@ RollDice<- function(N,K,P) {
     {
         sum = sum + ((K[i]-600* P)^2) / (600 * P)
     }
+
+    if (sum > 9.23 && sum < 0)
+    {
+        print("Nincs a tartományban!")
+    }
+    else {
+       print("A tartományban van!")
+    }
     
     return (sum)
+
 }
 
 RollDice(N,K,P)
