@@ -8,8 +8,6 @@ PolynomialReg <- function(X, Y) {
     detUpperA2 <-detUpperCalculateA2(X,Y)
     detBottom <- detBottomCalculate(X, Y)
 
-    
-
     A0 <- detUpperA0 / detBottom
     A1 <- detUpperA1 / detBottom
     A2 <- detUpperA2 / detBottom
@@ -85,7 +83,8 @@ detUpperCalculateA2 <- function(X, Y) {
 
 Summary <- function(X, Y) {
     sum <- 0
-    if (missing(Y)) {
+    if (missing(Y)) 
+    {
         for (i in 1:n)
         {
             sum <- sum + X[i]
