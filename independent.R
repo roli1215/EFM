@@ -13,26 +13,17 @@ IndependencyTest <- function(K)
     
     sumR <- 0
 
-
     for (i in 1:r)
     {
-
         sumS <- 0
 
         for (j in 1:s)
         {
-        
             sumS = sumS + ((K[i,j] - (row[i] * column[j])/n)^2 / (row[i] * column[j]))
-
         }
-
         sumR = sumR + sumS
-        
     }
-
     result = n * sumR
     sprintf("Result: %.3f", result)
-
 }
-
 IndependencyTest(matrix)
