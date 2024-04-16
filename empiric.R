@@ -1,3 +1,5 @@
+x <-c(1,2,3,4,5)
+
 atlag = function(x)
 {
 	s = 0;

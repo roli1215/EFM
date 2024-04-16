@@ -19,7 +19,6 @@ linreg <- function(X,Y)
 		sumASquare = sumASquare + X[i]^2;
 	}
 	
-	
 	detAFirst = (sumA * length(X)) - (sumC * sumB);
 	detASecond = sumASquare * length(X) - sumB * sumB;
 	a = detAFirst / detASecond;
@@ -28,8 +27,6 @@ linreg <- function(X,Y)
 	detBSecond = sumASquare * length(X) - sumB * sumB;
 	b = detBFirst / detBSecond;
 
-
-	
 	lines(X, a*X+b, type = "l", lty = 1, col="blue")
 	
 }

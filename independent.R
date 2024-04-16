@@ -6,11 +6,18 @@ IndependencyTest <- function(K)
     row = rowSums(K)
     column = colSums(K)
 
+    print(row)
+    print(column)
+
     r = length(row)
     s = length(column)
 
+    print(r)
+    print(s)
+
     n <- sum(row)
     
+    print(n)
     sumR <- 0
 
     for (i in 1:r)
@@ -24,6 +31,12 @@ IndependencyTest <- function(K)
         sumR = sumR + sumS
     }
     result = n * sumR
+    
+    if (result < qchisq(p=.95, df=(r-1)*(s-1) )){
+     print('Az erteket elfogadjuk!')
+  } else {
+     print('Az erteket nem fogadjuk el!')
+  }
     sprintf("Result: %.3f", result)
 }
 IndependencyTest(matrix)
